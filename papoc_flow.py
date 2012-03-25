@@ -5,7 +5,7 @@ import production
 
 from utils import first
 
-db = production.db #GraphDatabase("http://localhost:7474/db/data")
+db = GraphDatabase("http://localhost:7474/db/data")
 
 def create_flow_start(index_name, index_key, index_id, id, properties = None):
 	if not index_name in db.nodes.indexes.keys():
