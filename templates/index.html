@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Graph-based web flow demo</h1>
+
+<h2>Examples</h2>
+<ul>
+	{% for flow in flows %}
+	<li>{{flow['title']}} <a href="/start/flow/{{flow['id']}}">start flow</a> <a href="/flow/{{flow['id']}}">examine flow</a></li>
+	{% endfor %}
+</ul>
+
+{% endblock %}

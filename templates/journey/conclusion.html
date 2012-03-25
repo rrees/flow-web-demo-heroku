@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="{{journey['flow_id']}}">
+
+<h1>{{journey['id']}}</h1>
+
+<dl>
+	{% for attribute in attributes %}
+	<dt>{{attribute['type']}}</dt>
+	<dd>{{attribute['value']}}</dd>
+	{% endfor %}
+</dl>
+
+</section>
+
+{% endblock %}

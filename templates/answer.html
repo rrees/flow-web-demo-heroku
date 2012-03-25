@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{flow['title']}}</h1>
+
+<h2>{{question['text']}}</h2>
+
+<p><em>{{answer['text']}}</em></p>
+
+{% for reward in rewards %}
+<dl>
+	<dt>Reward type</dt>
+	<dd>{{reward['type']}}</dd>
+	<dt>Reward value</dt>
+	<dd>{{reward['value']}}</dd>
+</dl>
+{% endfor %}
+
+{% if next_question %}
+<p><a href="/flow/{{flow['id']}}/question/{{next_question['id']}}">Next question</a></p>
+{% endif %}
+
+{% endblock %}

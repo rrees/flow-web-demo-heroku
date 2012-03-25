@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="{{journey['flow_id']}}">
+	<header>
+		<h1>Journey {{journey['id']}}</h1>
+	</header>
+
+	<p class="question">{{journey.current_question['text']}}</p>
+
+	<form method="POST">
+		{% for answer in journey.current_question.answers %}
+			<p class="answer"><input type="radio" name="answer" value="{{answer['id']}}"> {{answer['text']}}</p>
+		{% endfor %}
+		<p><button type="submit">Answer</button></p>
+	</form>
+</section>
+
+{% endblock %}
